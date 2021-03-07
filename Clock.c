@@ -6,7 +6,7 @@ int main()
     int hours, minutes, seconds;
     int delay = 1000;
 
-    printf("Set time: \n");
+    printf("\n -> Set time <- \n\n");
 
     printf("Hours: ");
     scanf("%d", &hours);
@@ -41,9 +41,19 @@ int main()
             hours = 0;
         }
 
-        printf("\n  --------------------------------  ");
-        printf("\n  |        %02d:%02d:%02d              | ", hours, minutes, seconds);
-        printf("\n  --------------------------------  ");
+        if (hours <= 12) 
+        {
+            printf("\n  --------------------------------  ");
+            printf("\n  |        %02d:%02d:%02d AM           | ", hours, minutes, seconds);
+            printf("\n  --------------------------------  ");
+        } 
+        else 
+        {
+            printf("\n  --------------------------------  ");
+            printf("\n  |        %02d:%02d:%02d PM           | ", hours, minutes, seconds);
+            printf("\n  --------------------------------  ");    
+        }
+        
 
         Sleep(delay);
         system("cls"); //to clear the screen
